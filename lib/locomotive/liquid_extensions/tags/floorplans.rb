@@ -10,7 +10,7 @@ module Locomotive
 
         def display(options = {}, &block)
           
-          pry
+          #pry
           render_floorplans(&block)
 
         end
