@@ -3,10 +3,10 @@ module Locomotive
   module LiquidExtensions
     module Tags
 
-      class Floorplans < Solid::Block
+      class Floorplan < Solid::Block
 
         # register the tag
-        tag_name :floorplans
+        tag_name :floorplan
 
         def display(options = {}, &block)
 
@@ -14,16 +14,16 @@ module Locomotive
 
           floorplan = Floorplan.where(page_id: page_id.to_s).first
 
-          render_floorplans(floorplan, &block)
+          render_floorplan(floorplan, &block)
 
 
         end
 
         protected
 
-        def render_floorplans(floorplan, &block)
-          html = 'Floorplan description: ' + floorplan.description
-
+        def render_floorplan(floorplan, &block)
+          html = floorplan.image
+          
           html
         end
 
