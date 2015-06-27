@@ -21,20 +21,22 @@ module Locomotive
 
         protected
 
-        def render_floorplan(photospheres, &block)
-          html = []
+        def render_photospheres(photospheres, &block)
+          html = ''
           if photospheres
+
             photospheres.each do |photosphere|
-              
-
+              attributes = {image: photosphere.image_url, coordinates: photosphere.coordinates }
               current_context.stack do
-                current_context.merge('facebook_post' => attributes)
 
+                current_context.merge('photosphere' => attributes)
+              
                 html << yield
               end
 
             end
           end
+          
           html
         end
 
