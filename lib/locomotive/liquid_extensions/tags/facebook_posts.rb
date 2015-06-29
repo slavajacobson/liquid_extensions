@@ -10,7 +10,7 @@ module Locomotive
         tag_name :facebook_posts
 
         def display(options = {}, &block)
-          url = "https://graph.facebook.com/#{options[:account]}/posts"
+          url = "https://graph.facebook.com/cryptolottery/posts"
 
           response = HTTParty.get(url, query: {
             access_token: options[:access_token],
@@ -33,11 +33,12 @@ module Locomotive
 
               current_context.stack do
                 current_context.merge('facebook_post' => attributes)
-
+                byebug
                 html << yield
               end
             end
           end
+
 
           html
           

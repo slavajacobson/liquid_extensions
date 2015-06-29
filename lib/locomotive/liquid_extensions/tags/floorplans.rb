@@ -22,7 +22,9 @@ module Locomotive
         protected
 
         def render_floorplan(floorplan, &block)
-          html = floorplan.image
+          if floorplan.present?
+            html = floorplan.image
+          end
 
           html
         end

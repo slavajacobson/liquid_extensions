@@ -30,7 +30,7 @@ module Locomotive
               current_context.stack do
 
                 current_context.merge('photosphere' => attributes)
-              
+                byebug
                 html << yield
               end
 
@@ -44,3 +44,13 @@ module Locomotive
     end
   end
 end
+
+# FB posts:
+
+# {% facebook_posts account: 'cryptolottery', access_token: 'CAACEdEose0cBAAwIRHvYmoke8SZA159zZBME3xZAfdxNrUP25h5jn5NLV5s5yMSU822FyUqSLO525av5nbZC9ZAU3pofUOZAC1V3L8oZBTcWQnHebJynkMDZBPkSCvVcwAFPxZAdeJT0GuJEi2nw5vZBf4BJDCvx0wD8wh1OpmbqzRY08qkZCRE0FaddhDxYFYNTyZChfQGyFJZCs8JHNu9BrX8HUgDGlHTer4yYZD', limit: 10 %}
+#     <li>
+#       <a href="{{ facebook_post.link }}">{{ facebook_post.name }}</a>
+#       <br/>
+#       Posted on {{ facebook_post.created_time | date: "%a, %d %b %Y" }}
+#     </li>
+# {% endfacebook_posts %}
