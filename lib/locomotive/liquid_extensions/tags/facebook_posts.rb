@@ -32,8 +32,9 @@ module Locomotive
               attributes['created_time'] = DateTime.parse(post['created_time'])
 
               current_context.stack do
+                
                 current_context.merge('facebook_post' => attributes)
-                byebug
+                
                 html << yield
               end
             end

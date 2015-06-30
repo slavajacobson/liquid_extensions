@@ -26,11 +26,13 @@ module Locomotive
           if photospheres
 
             photospheres.each do |photosphere|
-              attributes = {image: photosphere.image_url, coordinates: photosphere.coordinates }
-              current_context.stack do
+              attributes = {'image' => photosphere.image_url, 'coordinates' => photosphere.coordinates }
 
+
+              current_context.stack do
+                
                 current_context.merge('photosphere' => attributes)
-                byebug
+                
                 html << yield
               end
 
