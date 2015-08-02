@@ -10,7 +10,7 @@ module Locomotive
 
         def display(options = {}, &block)
 
-          page_id = current_context.scopes.first['page']._id
+          page_id = current_context.scopes.last['page']._id
 
           photospheres = Floorplan.where(page_id: page_id.to_s).first.photospheres
 
