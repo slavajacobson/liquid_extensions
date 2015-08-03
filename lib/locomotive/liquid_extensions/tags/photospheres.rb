@@ -9,8 +9,8 @@ module Locomotive
         tag_name :photospheres
 
         def display(options = {}, &block)
-
-          page_id = current_context.scopes.last['page']._id
+          
+          page_id = options[:page].id #current_context.scopes.last['page']._id
 
           photospheres = Floorplan.where(page_id: page_id.to_s).first.photospheres
 
