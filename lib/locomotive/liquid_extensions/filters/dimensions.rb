@@ -4,8 +4,7 @@ module Locomotive
       module Dimensions
 
         def dimensions(input, *options)
-          byebug
-          t = '1'
+         
         end
 
       end
