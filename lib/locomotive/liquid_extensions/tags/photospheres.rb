@@ -26,7 +26,7 @@ module Locomotive
           if photospheres
 
             photospheres.each do |photosphere|
-              attributes = {'image' => photosphere.image_url, 'coordinates' => photosphere.coordinates }
+              attributes = { 'image' => photosphere.image_url(:photosphere_mobile), 'coordinates' => photosphere.coordinates }
 
 
               current_context.stack do
