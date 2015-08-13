@@ -4,7 +4,7 @@ module Locomotive
       module Dimensions
 
         def dimensions(input, *options)
-         
+
         end
 
       end
