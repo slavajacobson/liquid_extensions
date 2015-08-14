@@ -28,7 +28,7 @@ module Locomotive
             photospheres.each do |photosphere|
 
               
-              attributes = {'image' => photosphere.image_url(:thumb), 'xml' => Rails.application.routes.url_helpers.locomotive_floorplan_photosphere_url(photosphere.floorplan_id, photosphere._id, only_path: true, format: :xml), 'coordinates' => photosphere.coordinates }
+              attributes = {'description' => photosphere.description, 'image' => photosphere.image_url(:thumb), 'xml' => Rails.application.routes.url_helpers.locomotive_floorplan_photosphere_url(photosphere.floorplan_id, photosphere._id, only_path: true, format: :xml), 'coordinates' => photosphere.coordinates }
 
 
               current_context.stack do
