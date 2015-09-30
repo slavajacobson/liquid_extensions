@@ -4,6 +4,7 @@ module Locomotive
       module Number
 
         def money(input, *options)
+          byebug
           ProxyHelper.new(:currency, @context).invoke(input, options)
         end
 
