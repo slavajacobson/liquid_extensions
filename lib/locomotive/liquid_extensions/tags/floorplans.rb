@@ -23,7 +23,7 @@ module Locomotive
 
         def render_floorplan(floorplan, &block)
           if floorplan.present?
-            html = floorplan.image
+            html = floorplan.image_url(:thumb)
           end
 
           html
