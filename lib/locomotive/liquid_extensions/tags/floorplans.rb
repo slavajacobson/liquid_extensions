@@ -11,19 +11,24 @@ module Locomotive
         def display(options = {}, &block)
           
           page_id = options[:page].id #current_context.scopes.last['page']._id
-          
+          thumb = options[:thumb]
+
           floorplan = Floorplan.where(page_id: page_id.to_s).first
 
-          render_floorplan(floorplan, &block)
+          render_floorplan(floorplan, thumb, &block)
 
 
         end
 
         protected
 
-        def render_floorplan(floorplan, &block)
+        def render_floorplan(floorplan, thumb, &block)
           if floorplan.present?
-            html = floorplan.image_url(:thumb)
+            if thumb
+              html = floorplan.image_url(:thumb)
+            else
+              html = floorplan.image_url(:floorplan)
+            end
           end
 
           html
