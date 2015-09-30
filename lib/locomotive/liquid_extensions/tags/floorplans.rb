@@ -27,7 +27,7 @@ module Locomotive
             if thumb
               html = floorplan.image_url(:thumb)
             else
-              html = floorplan.image_url(:floorplan)
+              html = floorplan.image
             end
           end
 
